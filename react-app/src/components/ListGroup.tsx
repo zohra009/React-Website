@@ -2,11 +2,10 @@
 
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  items = [];
 
-  const getMessage = () => {
-    return items.length === 0 ? <p>Not item found</p> : null; //if this message is true return <p> msg otherwise render nothing
-  };
+  //   const getMessage = () => {
+  //     return items.length === 0 ? <p>Not item found</p> : null; //if this message is true return <p> msg otherwise render nothing
+  //   };
 
   return (
     //empty 'fragment' is included - that's how react reads the empty braces <framgment> sames ad using <> and </>
@@ -17,7 +16,14 @@ function ListGroup() {
       {items.length === 0 && <p>Not item found</p>}
       <ul className="list-group">
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li
+            //   each property is on a separte line
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log(item)}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>
